@@ -142,6 +142,7 @@ local plug_map = {
         :with_silent(),
     ["n|<leader>drc"] = map_cr("lua require('dap').run_to_cursor()"):with_noremap()
         :with_silent(),
+    ["n|<leader>cg"] = map_cr("lcd %:p:h"):with_noremap():with_silent(),
     ["n|<leader>drl"] = map_cr("lua require('dap').run_last()"):with_noremap()
         :with_silent(),
     ["n|<F9>"] = map_cr("lua require('dap').step_over()"):with_noremap()

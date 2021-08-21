@@ -37,7 +37,7 @@ function autocmd.load_autocmds()
             --     "if index(['org', 'cat'], &ft) < 0 | undojoin | Neoformat"
             -- },
             -- Auto change work directory
-            {"BufEnter", "*", "silent! lcd %:p:h"}, -- auto place to last edit
+            -- {"BufEnter", "*", "silent! lcd %:p:h"}, -- auto place to last edit
             {
                 "BufReadPost", "*",
                 [[if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g'\"" | endif]]
