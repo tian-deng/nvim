@@ -36,6 +36,10 @@ editor['p00f/nvim-ts-rainbow'] = {
     after = 'nvim-treesitter',
     event = 'BufRead'
 }
+editor['JoosepAlviste/nvim-ts-context-commentstring'] = {
+    opt = true,
+    after = 'nvim-treesitter'
+}
 editor['sbdchd/neoformat'] = {opt = true, cmd = 'Neoformat'}
 editor['windwp/nvim-ts-autotag'] = {
     opt = true,
@@ -44,6 +48,10 @@ editor['windwp/nvim-ts-autotag'] = {
 }
 editor['rhysd/accelerated-jk'] = {opt = true}
 editor['hrsh7th/vim-eft'] = {opt = true}
+editor['romainl/vim-cool'] = {
+    opt = true,
+    event = {'CursorMoved', 'InsertEnter'}
+}
 editor['easymotion/vim-easymotion'] = {opt = true, config = conf.easymotion}
 editor['karb94/neoscroll.nvim'] = {
     opt = true,
@@ -65,8 +73,12 @@ editor['rcarriga/nvim-dap-ui'] = {
     opt = false,
     config = conf.dapui,
     requires = {
-        {'mfussenegger/nvim-dap', config = conf.dap},
-        {'Pocco81/DAPInstall.nvim', config = conf.dapinstall}
+        {'mfussenegger/nvim-dap', config = conf.dap}, {
+            'Pocco81/DAPInstall.nvim',
+            opt = true,
+            cmd = {'DIInstall', 'DIUninstall', 'DIList'},
+            config = conf.dapinstall
+        }
     }
 }
 

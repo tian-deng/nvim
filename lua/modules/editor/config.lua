@@ -68,18 +68,7 @@ function config.nvim_treesitter()
     vim.api.nvim_command('set foldexpr=nvim_treesitter#foldexpr()')
 
     require'nvim-treesitter.configs'.setup {
-        ensure_installed = {
-            "c", "cpp", "go", "gomod", "rust", "bash", "lua", "toml", "yaml",
-            "json", "python", "javascript", "typescript", "html"
-        },
-        ignore_install = {
-            "beancount", "bibtex", "c_sharp", "clojure", "comment",
-            "commonlisp", "cuda", "dart", "devicetree", "elixir", "erlang",
-            "fennel", "Godot", "glimmer", "graphql", "java", "jsdoc", "julia",
-            "kotlin", "ledger", "nix", "ocaml", "ocaml_interface", "php", "ql",
-            "query", "r", "rst", "ruby", "scss", "sparql", "supercollider",
-            "svelte", "teal", "tsx", "turtle", "verilog", "vue", "zig"
-        },
+        ensure_installed = 'maintained',
         highlight = {enable = true, disable = {'vim'}},
         textobjects = {
             select = {
@@ -116,7 +105,8 @@ function config.nvim_treesitter()
             enable = true,
             extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
             max_file_lines = 1000 -- Do not enable for files with more than 1000 lines, int
-        }
+        },
+        context_commentstring = {enable = true, enable_autocmd = false}
     }
 end
 
@@ -161,8 +151,8 @@ function config.auto_session()
         auto_session_enable_last_session = true,
         auto_session_root_dir = sessions_dir,
         auto_session_enabled = true,
-        auto_save_enabled = nil,
-        auto_restore_enabled = nil,
+        auto_save_enabled = true,
+        auto_restore_enabled = true,
         auto_session_suppress_dirs = nil
     }
 
